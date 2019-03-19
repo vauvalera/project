@@ -21,13 +21,14 @@ export default {
 
 <style scoped lang="sass">
 .v-title
- color: #262626
- font-family: ProximaNova
- text-align: start
- font-size: 18px
- font-weight: normal
- font-style: normal
- font-stretch: normal
- line-height: normal
- letter-spacing: normal
+  color: #262626
+  font-family: ProximaNova
+  text-align: start
+  font-size: 18px
+  font-weight: normal
+  font-style: normal
+  font-stretch: normal
+  line-height: normal
+  letter-spacing: normal
+  margin: 0
 </style>

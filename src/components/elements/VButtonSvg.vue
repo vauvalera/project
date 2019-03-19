@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import VButton from './VButton';
+import VButton from './VButton'
+
 export default {
   name: 'VButtonSvg',
   components: { VButton },
@@ -21,10 +22,12 @@ export default {
     },
     svg: {
       type: Object,
-      default: {
-        name: 'cart',
-        width: '20',
-        height: '19'
+      default () {
+        return {
+          name: 'cart',
+          width: '20',
+          height: '19'
+        }
       }
     }
   }
@@ -36,5 +39,4 @@ export default {
   &--svg
     svg
       margin-right: 10px
-
 </style>

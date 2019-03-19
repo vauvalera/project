@@ -24,7 +24,7 @@ export default {
   height: 35px
   background-color: #0284c6
   border: none
-  display: inline-flex
+  display: flex
   &:hover
     cursor: pointer
   &:active
@@ -45,4 +45,12 @@ export default {
     line-height: normal
     letter-spacing: normal
     color: #ffffff
+  &--white
+    background-color: #f8f8f8
+    .v-btn_content
+      color: #333333
+    &:active
+      background-color: #dfdfdf
+  &--fullsize
+    width: 100%
 </style>

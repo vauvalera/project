@@ -15,19 +15,18 @@ export default {
   name: 'VTextSvg',
   components: { VText },
   props: {
-    class: {
-      type: String
-    },
     text: {
       type: String,
       default: 'Физический размер'
     },
     svg: {
       type: Object,
-      default: {
-        name: 'ok',
-        width: '12',
-        height: '10'
+      default () {
+        return {
+          name: 'ok',
+          width: '12',
+          height: '10'
+        }
       }
     }
   }

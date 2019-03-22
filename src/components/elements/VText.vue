@@ -11,10 +11,10 @@ export default {
   props: {
     text: {
       type: String,
-      default: 'Физический размер'
-    }
-  }
-}
+      default: 'Физический размер',
+    },
+  },
+};
 </script>
 
 <style scoped lang="sass">

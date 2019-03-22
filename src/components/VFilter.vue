@@ -4,10 +4,12 @@
       <v-button
         class="v-btn--fullsize"
         :title="buttonView"
+        @click="view"
       ></v-button>
       <v-button
         class="v-btn--white v-btn--fullsize"
         :title="buttonClear"
+        @click="clear"
       ></v-button>
       <v-text
         class="v-text--17"
@@ -15,9 +17,12 @@
       ></v-text>
       <div class="v-filter_checkboxes">
         <v-check-box
-          v-for="checkbox in checkboxs"
-          :key="checkbox.value"
-          :title="checkbox.title"
+          v-for="item in items"
+          :key="item.code"
+          :name="item.name"
+          :code="item.code"
+          :value="isChecked(item.code)"
+          @change="change"
         ></v-check-box>
       </div>
     </div>
@@ -25,39 +30,65 @@
 </template>
 
 <script>
-import VBlock from './elements/VBlock'
-import VText from './elements/VText'
-import VButton from './elements/VButton'
-import VCheckBox from './elements/VCheckBox'
+import { mapState, mapMutations, mapActions } from 'vuex';
+import VBlock from './elements/VBlock.vue';
+import VText from './elements/VText.vue';
+import VButton from './elements/VButton.vue';
+import VCheckBox from './elements/VCheckBox.vue';
 
 export default {
   name: 'VFilter',
-  data () {
+  data() {
     return {
       buttonView: 'Показать результат',
       buttonClear: 'Очистить',
       producer: 'Производитель',
-      checkboxs: [
-        { title: 'Canon' },
-        { title: 'Fujifilm' },
-        { title: 'Nikon' },
-        { title: 'Panasonic' },
-        { title: 'Leica' },
-        { title: 'Olympus' },
-        { title: 'Pentax' },
-        { title: 'Geleral Electrics' },
-        { title: 'Sigma' },
-        { title: 'Zenit' }
-      ]
-    }
+    };
   },
   components: {
     VCheckBox,
     VText,
     VButton,
-    VBlock
-  }
-}
+    VBlock,
+  },
+  computed: {
+    ...mapState({
+      items: state => state.items,
+      filter: state => state.filter,
+    }),
+  },
+  methods: {
+    ...mapMutations([
+      'addElemToFilter',
+      'deleteElemFromFilter',
+      'clearFilter',
+    ]),
+
+    ...mapActions([
+      'getItems',
+    ]),
+
+    change(code, value) {
+      if (value) {
+        this.addElemToFilter(code);
+        return;
+      }
+      this.deleteElemFromFilter(code);
+    },
+
+    isChecked(code) {
+      return this.filter.some(item => item === code);
+    },
+
+    view() {
+      this.getItems();
+    },
+
+    clear() {
+      this.clearFilter();
+    },
+  },
+};
 </script>
 
 <style scoped lang="sass">

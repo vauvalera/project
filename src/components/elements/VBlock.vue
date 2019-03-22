@@ -6,13 +6,12 @@
 
 <script>
 export default {
-  name: 'VBlock'
-}
+  name: 'VBlock',
+};
 </script>
 
 <style scoped lang="sass">
 .v-block
   width: 307px
   background-color: #ffffff
-
 </style>

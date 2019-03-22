@@ -3,16 +3,31 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
+    "start": "webpack --mode development",
+    "build": "webpack --mode production --progress --hide-modules --display-error-details",
     "lint": "vue-cli-service lint",
     "generate-icons": "vsvg -s ./src/assets/svg-icons -t ./src/assets/compiled-icons",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "eslint-config-airbnb": "^17.1.0",
     "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^7.12.4",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "image-webpack-loader": "^4.6.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "style-loader": "^0.23.1",
     "vue": "^2.6.6",
-    "vuex": "^3.0.1"
+    "vuex": "^3.0.1",
+    "webpack": "^4.29.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.5",
@@ -24,12 +39,14 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
-    "eslint": "^5.8.0",
+    "clean-webpack-plugin": "^2.0.1",
+    "eslint": "^5.15.3",
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "vue-svgicon": "^3.2.4",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "webpack-cli": "^3.3.0"
   },
   "eslintConfig": {
     "root": true,

@@ -10,27 +10,28 @@
 </template>
 
 <script>
-import VText from './VText'
+import VText from './VText';
+
 export default {
   name: 'VTextSvg',
   components: { VText },
   props: {
     text: {
       type: String,
-      default: 'Физический размер'
+      default: 'Физический размер',
     },
     svg: {
       type: Object,
-      default () {
+      default() {
         return {
           name: 'ok',
           width: '12',
-          height: '10'
-        }
-      }
-    }
-  }
-}
+          height: '10',
+        };
+      },
+    },
+  },
+};
 </script>
 
 <style scoped lang="sass">

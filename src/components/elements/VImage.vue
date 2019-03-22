@@ -11,10 +11,10 @@ export default {
   props: {
     src: {
       type: String,
-      default: require('../../assets/img.png')
-    }
-  }
-}
+      default: require('../../assets/img.png'),
+    },
+  },
+};
 </script>
 
 <style scoped lang="sass">

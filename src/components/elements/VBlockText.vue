@@ -18,17 +18,17 @@
 </template>
 
 <script>
-import VText from './VText'
+import VText from './VText';
 
 export default {
   name: 'VBlockText',
   props: {
-    items: Array
+    items: Array,
   },
   components: {
-    VText
-  }
-}
+    VText,
+  },
+};
 </script>
 
 <style scoped lang="sass">
@@ -36,5 +36,8 @@ export default {
   &_item
     display: flex
     & > p:first-child
+      font-family: ProximaNovaLight
       margin-right: 5px
+      font-size: 12px
+      line-height: 22px
 </style>

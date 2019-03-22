@@ -11,12 +11,12 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Canon PowerShot SX400 IS\n' +
-              'с улучшенной матрицей\n' +
-              'и объективом'
-    }
-  }
-}
+      default: 'Canon PowerShot SX400 IS\n'
+              + 'с улучшенной матрицей\n'
+              + 'и объективом',
+    },
+  },
+};
 </script>
 
 <style scoped lang="sass">

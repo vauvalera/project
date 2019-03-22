@@ -29,36 +29,36 @@
 </template>
 
 <script>
-import VBlock from './elements/VBlock'
-import VImage from './elements/VImage'
-import VTitle from './elements/VTitle'
-import VButtonSvg from './elements/VButtonSvg'
-import VTextSvg from './elements/VTextSvg'
-import VBlockText from './elements/VBlockText'
-import VText from './elements/VText'
+import VBlock from './elements/VBlock';
+import VImage from './elements/VImage';
+import VTitle from './elements/VTitle';
+import VButtonSvg from './elements/VButtonSvg';
+import VTextSvg from './elements/VTextSvg';
+import VBlockText from './elements/VBlockText';
+import VText from './elements/VText';
 
 export default {
   name: 'VCard',
-  data () {
+  data() {
     return {
       items: [
         { name: 'Физический размер', value: '23.2 x 15.2 мм' },
         { name: 'Диафрагма', value: 'CMOS' },
         { name: 'Формат записи', value: 'RAW, JPEG, MP4 и другие' },
-        { name: 'Фокусное расстояние', value: '18-55 мм.' }
+        { name: 'Фокусное расстояние', value: '18-55 мм.' },
       ],
       svg: {
         name: 'cart',
         width: '19',
-        height: '17'
+        height: '17',
       },
       svg1: {
         name: 'cart',
         width: '20',
-        height: '19'
+        height: '19',
       },
-      text: 'Арт. 34534345'
-    }
+      text: 'Арт. 34534345',
+    };
   },
   components: {
     VText,
@@ -67,9 +67,9 @@ export default {
     VButtonSvg,
     VTitle,
     VImage,
-    VBlock
-  }
-}
+    VBlock,
+  },
+};
 </script>
 
 <style scoped lang="sass">

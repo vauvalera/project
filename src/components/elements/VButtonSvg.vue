@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import VButton from './VButton'
+import VButton from './VButton';
 
 export default {
   name: 'VButtonSvg',
@@ -18,20 +18,20 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Купить'
+      default: 'Купить',
     },
     svg: {
       type: Object,
-      default () {
+      default() {
         return {
           name: 'cart',
           width: '20',
-          height: '19'
-        }
-      }
-    }
-  }
-}
+          height: '19',
+        };
+      },
+    },
+  },
+};
 </script>
 
 <style scoped lang="sass">

@@ -1,6 +1,6 @@
 <template>
   <label class="checkbox" >
-    <input type="checkbox" v-bind:checked="value" @click="click"/>
+    <input type="checkbox" :checked="checked" @click="click"/>
     <div class="checkbox_text">{{ title }}</div>
   </label>
 </template>
@@ -10,14 +10,42 @@ export default {
   name: 'VCheckBox',
   props: {
     value: Boolean,
-    title: String
+    object: Object,
+    code: String,
+    name: String,
+  },
+  computed: {
+    checked() {
+      if (this.object) {
+        return this.object.value;
+      }
+
+      return this.value;
+    },
+    title() {
+      if (this.object) {
+        return this.object.name;
+      }
+
+      return this.name;
+    },
   },
   methods: {
-    click (e) {
-      this.$emit('change', e.target.checked)
-    }
-  }
-}
+    click(e) {
+      if (this.object) {
+        this.$emit('change', this.object, e.target.checked);
+        return;
+      }
+
+      if (this.code) {
+        this.$emit('change', this.code, e.target.checked);
+        return;
+      }
+
+      this.$emit('change', e.target.checked);
+    },
+  },
+};
 </script>
 
 <style scoped lang="sass">
@@ -36,7 +64,6 @@ export default {
     color: #4a4a4a
     & + .checkbox_text
       margin-left: 10px
-      width: 51px
       line-height: 20px
     &:checked
       &:after

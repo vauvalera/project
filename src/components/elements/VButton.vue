@@ -1,5 +1,5 @@
 <template>
-  <button class="v-btn">
+  <button class="v-btn" @click="click">
     <div class="v-btn_content">
       <slot>{{ title }}</slot>
     </div>
@@ -12,10 +12,15 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Купить'
-    }
-  }
-}
+      default: 'Купить',
+    },
+  },
+  methods: {
+    click(e) {
+      this.$emit('click', e);
+    },
+  },
+};
 </script>
 
 <style scoped lang="sass">

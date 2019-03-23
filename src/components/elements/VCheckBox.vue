@@ -70,11 +70,11 @@ export default {
         height: 14px
         width: 14px
         position: absolute
-        content: '\2713'
+        content: ''
         color: #fff
         display: inline-block
         text-align: center
-        background-color: #3e8bdc
+        background: #3e8bdc url('../../assets/images/ok.png') no-repeat 50%
         border: none
       & + .checkbox_text
         color: #3e8bdc
@@ -84,6 +84,7 @@ export default {
       height: 13px
       width: 13px
       background: #fff
+      background-size: cover
       border: 1px solid #d7d7d7
 
 </style>

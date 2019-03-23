@@ -1,8 +1,8 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const distPath = path.join(__dirname, '/public');
 
@@ -28,39 +28,15 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
-        exclude: /node_modules/,
+        test: /\.(sa|sc|c)ss$/,
         use: [
-          'style-loader',
-          // isProduction() ? MiniCssExtractPlugin.loader : 'style-loader',
-          {
-            loader: 'css-loader',
-            // options: {
-            //   minimize: isProduction(),
-            // },
-          },
-          'sass-loader',
-          'resolve-url-loader',
-        ],
-      },
-      {
-        test: /\.scss$/,
-        use: [
-          'vue-style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
-      },
-      {
-        test: /\.sass$/,
-        use: [
-          'vue-style-loader',
+          isProduction() ? MiniCssExtractPlugin.loader : 'vue-style-loader',
           'css-loader',
           'sass-loader?indentedSyntax',
         ],
       },
       {
-        test: /\.(gif|png|jpe?g|svg)$/i,
+        test: /\.(gif|png|jpe?g|svg)$/,
         exclude: /fonts/,
         use: [
           {
@@ -114,11 +90,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
-    new CleanWebpackPlugin(),
   ],
+  optimization: {
+    minimizer: [
+      new OptimizeCSSAssetsPlugin({}),
+    ],
+  },
   devServer: {
     contentBase: distPath,
-    port: 9000,
+    port: 8081,
     compress: true,
     open: true,
   },
@@ -126,4 +106,5 @@ module.exports = {
     modules: ['node_modules', path.resolve(__dirname, 'src')],
     extensions: ['*', '.js', '.vue', '.css'],
   },
+  devtool: '#source-map',
 };

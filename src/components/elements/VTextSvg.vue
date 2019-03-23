@@ -38,7 +38,7 @@ export default {
 .v-text
     &_svg
         display: flex
-        align-items: center
+        align-items: baseline
         svg
             margin-right: 8px
     &--green

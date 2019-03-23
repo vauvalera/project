@@ -14,4 +14,5 @@ export default {
     new Item('Zenit', 'zenit'),
   ],
   filter: [],
+  cards: [],
 };

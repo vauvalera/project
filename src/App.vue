@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <v-card />
-    <v-card />
-    <v-card />
+    <v-card
+      v-for="(card, key) in cards"
+      :key="key"
+      :card="card"
+    ></v-card>
     <v-filter />
   </div>
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex';
 import VCard from './components/VCard';
 import VFilter from './components/VFilter';
 import './assets/fonts/fonts.sass';
@@ -17,6 +20,19 @@ export default {
   components: {
     VFilter,
     VCard,
+  },
+  computed: {
+    ...mapState({
+      cards: state => state.cards,
+    }),
+  },
+  created() {
+  	this.getItems();
+  },
+  methods: {
+    ...mapActions([
+      'getItems',
+    ]),
   },
 };
 </script>

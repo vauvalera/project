@@ -2,26 +2,24 @@
     <v-block class="v-card">
         <v-text
           class="v-text--pinkish-grey"
-          :text="text"
+          :text="art"
         ></v-text>
         <v-image></v-image>
         <div class="v-card_content">
-            <v-text-svg class="v-text--green"></v-text-svg>
+            <v-text-svg class="v-text--green" :text="stock"></v-text-svg>
             <v-title></v-title>
-            <v-block-text :items="items"></v-block-text>
+            <v-block-text :items="card.getTech()"></v-block-text>
           <div class="v-card_footer">
             <v-button-svg></v-button-svg>
             <div>
               <svgicon
+                class="v-card_favorite"
                 :name="svg.name"
                 :width="svg.width"
                 :height="svg.height"
+                @click="clickFavorite"
               ></svgicon>
-              <svgicon
-                :name="svg1.name"
-                :width="svg1.width"
-                :height="svg1.height"
-              ></svgicon>
+              <img :src="card.getImage()">
             </div>
           </div>
         </div>
@@ -29,6 +27,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import VBlock from './elements/VBlock';
 import VImage from './elements/VImage';
 import VTitle from './elements/VTitle';
@@ -36,6 +35,7 @@ import VButtonSvg from './elements/VButtonSvg';
 import VTextSvg from './elements/VTextSvg';
 import VBlockText from './elements/VBlockText';
 import VText from './elements/VText';
+import Card from '../classes/Card';
 
 export default {
   name: 'VCard',
@@ -48,17 +48,14 @@ export default {
         { name: 'Фокусное расстояние', value: '18-55 мм.' },
       ],
       svg: {
-        name: 'cart',
+        name: 'heart',
         width: '19',
         height: '17',
       },
-      svg1: {
-        name: 'cart',
-        width: '20',
-        height: '19',
-      },
-      text: 'Арт. 34534345',
     };
+  },
+  props: {
+    card: Card,
   },
   components: {
     VText,
@@ -69,6 +66,24 @@ export default {
     VImage,
     VBlock,
   },
+  computed: {
+    art() {
+      const art = this.card.getArt();
+      return `Арт. ${art}`;
+    },
+    stock() {
+      const stock = this.card.getInStock();
+      return stock ? 'В наличии' : 'Отсутсвует';
+    },
+  },
+  methods: {
+    ...mapActions([
+      'setFavorite',
+    ]),
+    clickFavorite() {
+      this.setFavorite(this.card);
+    },
+  },
 };
 </script>
 
@@ -76,19 +91,22 @@ export default {
 .v-card
     .v-text
       text-align: right
-      padding: 20px 16px 0 0
+      padding: 20px 15px 0 0
     .v-image
-      padding: 15px 6px 22px 24px
+      padding: 15px 6px 0 24px
+    .v-block-text
+      padding-bottom: 21px
     &_content
-        padding: 22px 10px 30px 32px
+        padding: 20px 20px 30px 32px
         .v-title
-          margin: 5px 0 17px 0
+          padding: 5px 40px 17px 0
     &_footer
       margin-top: 40px
       display: flex
       justify-content: space-between
       align-items: center
-      svg
-        &:first-child
-          margin-right: 10px
+    &_favorite
+      margin-right: 10px
+      &:hover
+        cursor: pointer
 </style>

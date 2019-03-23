@@ -19,7 +19,7 @@ export default {
 
 <style scoped lang="sass">
 .v-text
-  font-family: ProximaNova
+  font-family: ProximaNovaLight
   font-size: 12.8px
   font-weight: 300
   margin: 0

@@ -2,6 +2,8 @@
  <img
    class="v-image"
    :src="src"
+   :width="width"
+   :height="height"
  />
 </template>
 
@@ -11,7 +13,15 @@ export default {
   props: {
     src: {
       type: String,
-      default: require('../../assets/img.png'),
+      default: require('../../assets/images/img.png'),
+    },
+    width: {
+      type: String,
+      default: '278',
+    },
+    height: {
+      type: String,
+      default: '200',
     },
   },
 };

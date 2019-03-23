@@ -35,9 +35,11 @@ export default {
 .v-block-text
   &_item
     display: flex
-    & > p:first-child
+    align-items: baseline
+    & > p
       font-family: ProximaNovaLight
-      margin-right: 5px
       font-size: 12px
       line-height: 22px
+      &:first-child
+          margin-right: 5px
 </style>

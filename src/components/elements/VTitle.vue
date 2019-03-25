@@ -1,5 +1,6 @@
 <template>
- <p
+ <a
+   href="#"
    class="v-title"
    v-html="title"
  />
@@ -11,9 +12,7 @@ export default {
   props: {
     title: {
       type: String,
-      default: 'Canon PowerShot SX400 IS\n'
-              + 'с улучшенной матрицей\n'
-              + 'и объективом',
+      default: '',
     },
   },
 };
@@ -21,8 +20,9 @@ export default {
 
 <style scoped lang="sass">
 .v-title
+  text-decoration: none
   color: #262626
-  font-family: ProximaNova
+  font-family: ProximaNovaRegular
   text-align: start
   font-size: 18px
   font-weight: normal

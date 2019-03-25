@@ -1,6 +1,7 @@
 const element = {
   art: '34534345',
   img: require('../assets/images/scale.png'),
+  name: 'Canon PowerShot SX400 IS с улучшенной матрицей и объективом',
   tech: [
     { name: 'Физический размер', value: '23.2 x 15.2 мм' },
     { name: 'Диафрагма', value: 'CMOS' },
@@ -30,7 +31,6 @@ const getItems = () => {
 
 const getItemsByFilter = () => {
   const count = Math.round(1 + Math.random() * 2);
-  console.log('count', count);
   const items = [];
   for (let i = 0; i < count; i++) {
     const item = JSON.parse(JSON.stringify(element));

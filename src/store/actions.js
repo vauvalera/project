@@ -9,7 +9,7 @@ export default {
       params: filter,
     })
       .then(response => {
-        console.log(response);
+        // console.log(response);
       })
       .catch(error => {
         console.log(error);
@@ -39,7 +39,7 @@ export default {
 
     axios.get(`/item/favorite/${id}/`)
       .then(response => {
-        console.log(response);
+        // console.log(response);
       })
       .catch(error => {
         console.log(error);

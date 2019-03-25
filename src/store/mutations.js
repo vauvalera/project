@@ -16,9 +16,9 @@ export default {
   setItems(state, data) {
     state.cards = data.map(item => {
       const {
-        id, art, img, tech, inStock, inFavorite,
+        id, art, name, img, tech, inStock, inFavorite,
       } = item;
-      return new Card(id, art, img, tech, inStock, inFavorite);
+      return new Card(id, art, name, img, tech, inStock, inFavorite);
     });
   },
 

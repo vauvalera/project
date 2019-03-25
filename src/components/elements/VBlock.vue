@@ -12,6 +12,8 @@ export default {
 
 <style scoped lang="sass">
 .v-block
+  max-width: 307px
   width: 307px
   background-color: #ffffff
+  box-sizing: border-box
 </style>

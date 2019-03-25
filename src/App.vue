@@ -1,11 +1,15 @@
 <template>
-  <div id="app">
-    <v-card
-      v-for="(card, key) in cards"
-      :key="key"
-      :card="card"
-    ></v-card>
-    <v-filter />
+  <div class="wrapper" v-if="cards.length">
+    <div class="wrapper__cards">
+      <v-card
+        v-for="(card, key) in cards"
+        :key="key"
+        :card="card"
+      ></v-card>
+    </div>
+    <div class="wrapper__filter">
+      <v-filter />
+    </div>
   </div>
 </template>
 
@@ -38,15 +42,23 @@ export default {
 </script>
 
 <style lang="sass">
-#app
-  font-family: 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing: antialiased
-  -moz-osx-font-smoothing: grayscale
-  color: #2c3e50
+body
+  padding: 0
+  margin: 0
+.wrapper
+  font-family: ProximaNovaRegular, sans-serif
+  width: 1280px
   margin-top: 60px
+  color: #2c3e50
   display: flex
   background-color: #f7f7f7
-  justify-content: space-around
   align-items: flex-start
-  padding: 10px 0
+  justify-content: space-between
+  &__cards
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    padding: 0 10px 10px 10px
+  &__filter
+    padding: 10px 10px 0 0
 </style>

@@ -25,25 +25,24 @@ export default {
 
 <style scoped lang="sass">
 .v-btn
-  min-width: 99.4px
+  min-width: 100px
   height: 35px
   background-color: #0284c6
   border: none
   display: flex
   &:hover
     cursor: pointer
-  &:active
     background-color: #0a608b
   &:focus
     outline: none
   &_content
-    font-family: ProximaNova
+    font-family: ProximaNovaRegular
     display: flex
     justify-content: center
     align-items: center
     display: flex
     flex: 1 0 auto
-    font-size: 13.8px
+    font-size: 14px
     font-weight: normal
     font-style: normal
     font-stretch: normal
@@ -54,7 +53,7 @@ export default {
     background-color: #f8f8f8
     .v-btn_content
       color: #333333
-    &:active
+    &:hover
       background-color: #dfdfdf
   &--fullsize
     width: 100%

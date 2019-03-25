@@ -1,7 +1,8 @@
 export default class Card {
-  constructor(id, art, img, tech, inStock, inFavorite) {
+  constructor(id, art, name, img, tech, inStock, inFavorite) {
     this.id = id;
     this.art = art;
+    this.name = name;
     this.img = img;
     this.tech = tech;
     this.inStock = inStock;
@@ -14,6 +15,10 @@ export default class Card {
 
   getArt() {
     return this.art;
+  }
+
+  getName() {
+    return this.name;
   }
 
   getImage() {

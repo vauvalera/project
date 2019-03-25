@@ -4,12 +4,12 @@
       <v-button
         class="v-btn--fullsize"
         :title="buttonView"
-        @click="view"
+        @click="getItems"
       ></v-button>
       <v-button
         class="v-btn--white v-btn--fullsize"
         :title="buttonClear"
-        @click="clear"
+        @click="clearFilter"
       ></v-button>
       <v-text
         class="v-text--17"
@@ -79,28 +79,20 @@ export default {
     isChecked(code) {
       return this.filter.some(item => item === code);
     },
-
-    view() {
-      this.getItems();
-    },
-
-    clear() {
-      this.clearFilter();
-    },
   },
 };
 </script>
 
 <style scoped lang="sass">
 .v-filter
-  padding: 30px
+  padding: 30px 28px
   display: flex
   flex-direction: column
   .v-btn--white
     margin-top: 10px
   .v-text--17
     text-align: left
-    margin: 25px 0 30px 0
+    margin: 26px 0 20px 0
   &_checkboxes
     display: flex
     flex-wrap: wrap

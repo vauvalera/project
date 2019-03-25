@@ -1,8 +1,20 @@
 <template>
-  <label class="checkbox" >
-    <input type="checkbox" :checked="checked" @click="click"/>
-    <div class="checkbox_text">{{ title }}</div>
-  </label>
+  <div class="checkbox">
+    <input
+      type="checkbox"
+      :checked="checked"
+      :id="code"
+      @change="change"
+    />
+    <div class="checkbox__block"></div>
+    <label
+      class="checkbox__label"
+      :for="code"
+      v-if="title"
+    >
+      {{ title }}
+    </label>
+  </div>
 </template>
 
 <script>
@@ -31,7 +43,7 @@ export default {
     },
   },
   methods: {
-    click(e) {
+    change(e) {
       if (this.object) {
         this.$emit('change', this.object, e.target.checked);
         return;
@@ -51,40 +63,38 @@ export default {
 <style scoped lang="sass">
 .checkbox
   display: inline-flex
-  align-items: baseline
-  font-size: 14px
-  line-height: 14px
-  cursor: pointer
+  position: relative
+  align-items: flex-start
   user-select: none
   margin: 2px 0
   flex-basis: 50%
-  input
-    position: relative
+  font-family: 'ProximaNovaLight', Sans-serif
+  font-size: 14px
+  line-height: normal
+  &__block
     cursor: pointer
-    color: #4a4a4a
-    & + .checkbox_text
-      margin-left: 10px
-      line-height: 20px
+    width: 14px
+    height: 14px
+    border: 1px solid #d7d7d7
+    box-sizing: border-box
+    background: #fff
+  &__label
+    margin-left: 10px
+    cursor: pointer
+  input[type=checkbox]
+    margin: 0
+    position: absolute
+    cursor: pointer
+    left: 0
+    top: 0
+    width: 14px
+    height: 14px
+    opacity: 0
     &:checked
-      &:after
-        height: 14px
-        width: 14px
-        position: absolute
-        content: ''
-        color: #fff
-        display: inline-block
-        text-align: center
-        background: #3e8bdc url('../../assets/images/ok.png') no-repeat 50%
-        border: none
-      & + .checkbox_text
+      & + .checkbox__block
+        background: #3e8bdc url('../../assets/images/ok.png') no-repeat center
+        border-color: #3e8bdc
+      & + .checkbox__block + .checkbox__label
         color: #3e8bdc
-    &:after
-      content: ''
-      position: absolute
-      height: 13px
-      width: 13px
-      background: #fff
-      background-size: cover
-      border: 1px solid #d7d7d7
 
 </style>

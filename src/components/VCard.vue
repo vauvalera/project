@@ -1,26 +1,37 @@
 <template>
     <v-block class="v-card">
         <v-text
-          class="v-text--pinkish-grey"
+          class="v-card__art v-text--pinkish-grey"
           :text="art"
         ></v-text>
-        <v-image></v-image>
-        <div class="v-card_content">
-            <v-text-svg class="v-text--green" :text="stock"></v-text-svg>
-            <v-title></v-title>
-            <v-block-text :items="card.getTech()"></v-block-text>
-          <div class="v-card_footer">
-            <v-button-svg></v-button-svg>
-            <div>
-              <svgicon
-                class="v-card_favorite"
-                :name="svg.name"
-                :width="svg.width"
-                :height="svg.height"
-                @click="clickFavorite"
-              ></svgicon>
-              <img :src="card.getImage()">
-            </div>
+        <a
+          class="v-card__img"
+          href="#"
+        >
+          <v-image></v-image>
+        </a>
+        <div class="v-card__content">
+          <v-text-svg
+            class="v-card__stock v-text--green"
+            :text="stock"
+          ></v-text-svg>
+          <v-title :title="card.getName()"></v-title>
+          <v-block-text
+            class="v-card__tech"
+            :items="card.getTech()"
+          ></v-block-text>
+        </div>
+        <div class="v-card__footer">
+          <v-button-svg></v-button-svg>
+          <div>
+            <svgicon
+              class="v-card__favorite"
+              :name="svg.name"
+              :width="svg.width"
+              :height="svg.height"
+              @click="clickFavorite"
+            ></svgicon>
+            <img :src="card.getImage()">
           </div>
         </div>
     </v-block>
@@ -41,12 +52,6 @@ export default {
   name: 'VCard',
   data() {
     return {
-      items: [
-        { name: 'Физический размер', value: '23.2 x 15.2 мм' },
-        { name: 'Диафрагма', value: 'CMOS' },
-        { name: 'Формат записи', value: 'RAW, JPEG, MP4 и другие' },
-        { name: 'Фокусное расстояние', value: '18-55 мм.' },
-      ],
       svg: {
         name: 'heart',
         width: '19',
@@ -89,24 +94,31 @@ export default {
 
 <style scoped lang="sass">
 .v-card
-    .v-text
-      text-align: right
-      padding: 20px 15px 0 0
-    .v-image
-      padding: 15px 6px 0 24px
-    .v-block-text
-      padding-bottom: 21px
-    &_content
-        padding: 20px 20px 30px 32px
-        .v-title
-          padding: 5px 40px 17px 0
-    &_footer
-      margin-top: 40px
-      display: flex
-      justify-content: space-between
-      align-items: center
-    &_favorite
-      margin-right: 10px
-      &:hover
-        cursor: pointer
+  margin-right: 10px
+  margin-top: 10px
+  padding: 20px 32px 30px
+  &:nth-child(3n)
+    margin-right: 0
+  &__art
+    text-align: right
+    font-size: 12px
+    line-height: normal
+  &__img
+    display: flex
+    justify-content: center
+    margin: 18px 0 22px 0
+  &__stock
+    margin-bottom: 5px
+  &__tech
+    min-height: 110px
+    margin: 17px 0  40px 0
+  &__footer
+    display: flex
+    justify-content: space-between
+    align-items: center
+      margin: 40px 20px 0 25px
+  &__favorite
+    margin-right: 10px
+    &:hover
+      cursor: pointer
 </style>

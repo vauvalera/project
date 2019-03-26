@@ -13,7 +13,7 @@ export default {
   props: {
     src: {
       type: String,
-      default: require('../../assets/images/img.png'),
+      default: require('../../assets/images/img.jpg'),
     },
     width: {
       type: String,

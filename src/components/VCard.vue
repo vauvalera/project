@@ -21,17 +21,20 @@
             :items="card.getTech()"
           ></v-block-text>
         </div>
-        <div class="v-card__footer">
-          <v-button-svg></v-button-svg>
-          <div>
-            <svgicon
-              class="v-card__favorite"
-              :name="svg.name"
-              :width="svg.width"
-              :height="svg.height"
+        <div class="v-card__actions">
+          <v-button-svg
+            class="v-button--blue"
+            :title="btnBuy"
+          ></v-button-svg>
+          <div class="v-card__actions">
+            <v-button-svg
+              class="v-card__favorite v-button--svg"
+              :svg="svg"
               @click="clickFavorite"
-            ></svgicon>
-            <img :src="card.getImage()">
+            ></v-button-svg>
+            <v-button-image
+              :src="card.getImage()"
+            ></v-button-image>
           </div>
         </div>
     </v-block>
@@ -47,15 +50,17 @@ import VTextSvg from './elements/VTextSvg';
 import VBlockText from './elements/VBlockText';
 import VText from './elements/VText';
 import Card from '../classes/Card';
+import VButtonImage from './elements/VButtonImage';
 
 export default {
   name: 'VCard',
   data() {
     return {
+      btnBuy: 'Купить',
       svg: {
         name: 'heart',
-        width: '19',
-        height: '17',
+        width: '20',
+        height: '20',
       },
     };
   },
@@ -63,6 +68,7 @@ export default {
     card: Card,
   },
   components: {
+    VButtonImage,
     VText,
     VBlockText,
     VTextSvg,
@@ -112,13 +118,9 @@ export default {
   &__tech
     min-height: 110px
     margin: 17px 0  40px 0
-  &__footer
+  &__actions
     display: flex
     justify-content: space-between
     align-items: center
       margin: 40px 20px 0 25px
-  &__favorite
-    margin-right: 10px
-    &:hover
-      cursor: pointer
 </style>

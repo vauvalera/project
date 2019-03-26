@@ -2,12 +2,12 @@
   <v-block>
     <div class="v-filter">
       <v-button
-        class="v-btn--fullsize"
+        class="v-button--blue v-button--fullsize"
         :title="buttonView"
         @click="getItems"
       ></v-button>
       <v-button
-        class="v-btn--white v-btn--fullsize"
+        class="v-button--white v-button--fullsize"
         :title="buttonClear"
         @click="clearFilter"
       ></v-button>
@@ -88,7 +88,7 @@ export default {
   padding: 30px 28px
   display: flex
   flex-direction: column
-  .v-btn--white
+  .v-button--white
     margin-top: 10px
   .v-text--17
     text-align: left

@@ -1,6 +1,6 @@
 <template>
-  <button class="v-btn" @click="click">
-    <div class="v-btn_content">
+  <button class="v-button" @click="click">
+    <div class="v-button__content">
       <slot>{{ title }}</slot>
     </div>
   </button>
@@ -24,18 +24,21 @@ export default {
 </script>
 
 <style scoped lang="sass">
-.v-btn
-  min-width: 100px
+.v-button
+  width: 100px
   height: 35px
-  background-color: #0284c6
   border: none
   display: flex
+  background-color: transparent
   &:hover
     cursor: pointer
-    background-color: #0a608b
   &:focus
     outline: none
-  &_content
+  &:active
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.5)
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.5)
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5)
+  &__content
     font-family: ProximaNovaRegular
     display: flex
     justify-content: center
@@ -51,10 +54,14 @@ export default {
     color: #ffffff
   &--white
     background-color: #f8f8f8
-    .v-btn_content
+    .v-button__content
       color: #333333
     &:hover
       background-color: #dfdfdf
+  &--blue
+    background-color: #0284c6
+    &:hover
+      background-color: #0a608b
   &--fullsize
     width: 100%
 </style>

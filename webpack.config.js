@@ -34,7 +34,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          isProduction() ? MiniCssExtractPlugin.loader : 'vue-style-loader',
+          isProduction() ? MiniCssExtractPlugin.loader : 'style-loader',
           'css-loader',
           'sass-loader?indentedSyntax',
         ],

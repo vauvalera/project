@@ -1,5 +1,5 @@
 <template>
-  <v-button class="v-btn--svg">
+  <v-button>
     <svgicon
      :name="svg.name"
      :width="svg.width"
@@ -11,15 +11,13 @@
 
 <script>
 import VButton from './VButton';
+import '../../assets/fonts/animations.sass';
 
 export default {
   name: 'VButtonSvg',
   components: { VButton },
   props: {
-    title: {
-      type: String,
-      default: 'Купить',
-    },
+    title: String,
     svg: {
       type: Object,
       default() {
@@ -35,8 +33,16 @@ export default {
 </script>
 
 <style scoped lang="sass">
-.v-btn
+.v-button
+  &:hover
+    animation: rotate 1s 1
+  svg
+    margin-right: 10px
   &--svg
+    width: 100%
+    height: 20px
+    &:active
+      box-shadow: none
     svg
-      margin-right: 10px
+      margin-right: 0
 </style>

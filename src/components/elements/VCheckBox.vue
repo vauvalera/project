@@ -92,7 +92,7 @@ export default {
     opacity: 0
     &:checked
       & + .checkbox__block
-        background: #3e8bdc url('../../assets/images/ok.png') no-repeat center
+        background: #3e8bdc url('../../assets/images/ok.jpg') no-repeat center
         border-color: #3e8bdc
       & + .checkbox__block + .checkbox__label
         color: #3e8bdc

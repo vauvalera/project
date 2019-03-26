@@ -1,23 +1,22 @@
 <template>
-    <v-block class="v-card">
+    <div class="v-card">
         <v-text
-          class="v-card__art v-text--pinkish-grey"
+          class="v-text--pinkish-grey"
           :text="art"
         ></v-text>
         <a
           class="v-card__img"
           href="#"
         >
-          <v-image></v-image>
+          <img :src="card.getImage()" />
         </a>
         <div class="v-card__content">
           <v-text-svg
-            class="v-card__stock v-text--green"
+            class="v-text--green"
             :text="stock"
           ></v-text-svg>
           <v-title :title="card.getName()"></v-title>
           <v-block-text
-            class="v-card__tech"
             :items="card.getTech()"
           ></v-block-text>
         </div>
@@ -28,22 +27,20 @@
           ></v-button-svg>
           <div class="v-card__actions">
             <v-button-svg
-              class="v-card__favorite v-button--svg"
+              class="v-button__svg"
               :svg="svg"
-              @click="clickFavorite"
+              @click="setFavorite(card)"
             ></v-button-svg>
             <v-button-image
-              :src="card.getImage()"
+              :src="btnCompare"
             ></v-button-image>
           </div>
         </div>
-    </v-block>
+    </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex';
-import VBlock from './elements/VBlock';
-import VImage from './elements/VImage';
 import VTitle from './elements/VTitle';
 import VButtonSvg from './elements/VButtonSvg';
 import VTextSvg from './elements/VTextSvg';
@@ -57,6 +54,7 @@ export default {
   data() {
     return {
       btnBuy: 'Купить',
+      btnCompare: require('../assets/images/scale.jpg'),
       svg: {
         name: 'heart',
         width: '20',
@@ -74,8 +72,6 @@ export default {
     VTextSvg,
     VButtonSvg,
     VTitle,
-    VImage,
-    VBlock,
   },
   computed: {
     art() {
@@ -91,36 +87,34 @@ export default {
     ...mapActions([
       'setFavorite',
     ]),
-    clickFavorite() {
-      this.setFavorite(this.card);
-    },
   },
 };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 .v-card
   margin-right: 10px
   margin-top: 10px
   padding: 20px 32px 30px
-  &:nth-child(3n)
-    margin-right: 0
-  &__art
-    text-align: right
-    font-size: 12px
-    line-height: normal
   &__img
     display: flex
     justify-content: center
     margin: 18px 0 22px 0
-  &__stock
-    margin-bottom: 5px
-  &__tech
-    min-height: 110px
-    margin: 17px 0  40px 0
   &__actions
     display: flex
     justify-content: space-between
     align-items: center
-      margin: 40px 20px 0 25px
+    .v-button__svg
+      margin-right: 10px
+  &:nth-child(3n)
+    margin-right: 0
+  .v-text.v-text--pinkish-grey
+    text-align: right
+    font-size: 12px
+    line-height: normal
+  .v-text_svg.v-text--green
+    margin-bottom: 5px
+  .v-block-text
+    min-height: 110px
+    margin: 17px 0  40px 0
 </style>

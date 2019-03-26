@@ -1,37 +1,34 @@
 <template>
-  <v-block>
-    <div class="v-filter">
-      <v-button
-        class="v-button--blue v-button--fullsize"
-        :title="buttonView"
-        @click="getItems"
-      ></v-button>
-      <v-button
-        class="v-button--white v-button--fullsize"
-        :title="buttonClear"
-        @click="clearFilter"
-      ></v-button>
-      <v-text
-        class="v-text--17"
-        :text="producer"
-      ></v-text>
-      <div class="v-filter_checkboxes">
-        <v-check-box
-          v-for="item in items"
-          :key="item.code"
-          :name="item.name"
-          :code="item.code"
-          :value="isChecked(item.code)"
-          @change="change"
-        ></v-check-box>
-      </div>
+  <div class="v-filter">
+    <v-button
+      class="v-button--blue v-button--fullsize"
+      :title="buttonView"
+      @click="getItems"
+    ></v-button>
+    <v-button
+      class="v-button--white v-button--fullsize"
+      :title="buttonClear"
+      @click="clearFilter"
+    ></v-button>
+    <v-text
+      class="v-text--17"
+      :text="producer"
+    ></v-text>
+    <div class="v-filter_checkboxes">
+      <v-check-box
+        v-for="item in items"
+        :key="item.code"
+        :name="item.name"
+        :code="item.code"
+        :value="isChecked(item.code)"
+        @change="change"
+      ></v-check-box>
     </div>
-  </v-block>
+  </div>
 </template>
 
 <script>
 import { mapState, mapMutations, mapActions } from 'vuex';
-import VBlock from './elements/VBlock.vue';
 import VText from './elements/VText.vue';
 import VButton from './elements/VButton.vue';
 import VCheckBox from './elements/VCheckBox.vue';
@@ -49,7 +46,6 @@ export default {
     VCheckBox,
     VText,
     VButton,
-    VBlock,
   },
   computed: {
     ...mapState({
@@ -83,7 +79,7 @@ export default {
 };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 .v-filter
   padding: 30px 28px
   display: flex

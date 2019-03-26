@@ -23,7 +23,7 @@ export default {
 };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 .v-button
   &__image
     width: 100%

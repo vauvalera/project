@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 .v-title
   text-decoration: none
   color: #262626

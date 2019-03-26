@@ -17,7 +17,7 @@ export default {
 };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 .v-text
   font-family: ProximaNovaRegular, sans-serif
   font-size: 13px

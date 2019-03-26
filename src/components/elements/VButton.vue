@@ -23,12 +23,13 @@ export default {
 };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 .v-button
   width: 100px
   height: 35px
   border: none
   display: flex
+  padding: 0
   background-color: transparent
   &:hover
     cursor: pointer

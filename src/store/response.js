@@ -1,6 +1,6 @@
 const element = {
   art: '34534345',
-  img: require('../assets/images/scale.jpg'),
+  img: require('../assets/images/img.jpg'),
   name: 'Canon PowerShot SX400 IS с улучшенной матрицей и объективом',
   tech: [
     { name: 'Физический размер', value: '23.2 x 15.2 мм' },

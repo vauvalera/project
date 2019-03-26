@@ -31,7 +31,7 @@ export default {
 };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 .v-block-text
   &_item
     display: flex

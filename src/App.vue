@@ -48,7 +48,7 @@ body
 .wrapper
   font-family: ProximaNovaRegular, sans-serif
   width: 1280px
-  margin-top: 60px
+  margin: 60px auto
   color: #2c3e50
   display: flex
   background-color: #f7f7f7
@@ -61,4 +61,10 @@ body
     padding: 0 10px 10px 10px
   &__filter
     padding: 10px 10px 0 0
+.v-card,
+.v-filter
+  max-width: 307px
+  width: 307px
+  background-color: #ffffff
+  box-sizing: border-box
 </style>

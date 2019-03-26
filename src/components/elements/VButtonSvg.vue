@@ -1,5 +1,5 @@
 <template>
-  <v-button>
+  <v-button @click="click">
     <svgicon
      :name="svg.name"
      :width="svg.width"
@@ -29,20 +29,25 @@ export default {
       },
     },
   },
+  methods: {
+    click(e) {
+      this.$emit('click', e);
+    },
+  },
 };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 .v-button
-  &:hover
-    animation: rotate 1s 1
   svg
     margin-right: 10px
-  &--svg
+  &__svg
     width: 100%
     height: 20px
     &:active
       box-shadow: none
+    &:hover
+      animation: rotate 1s 1
     svg
       margin-right: 0
 </style>

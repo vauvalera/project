@@ -34,7 +34,7 @@ export default {
 };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 .v-text
     &_svg
         display: flex

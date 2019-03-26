@@ -60,7 +60,7 @@ export default {
 };
 </script>
 
-<style scoped lang="sass">
+<style lang="sass">
 .checkbox
   display: inline-flex
   position: relative

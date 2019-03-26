@@ -81,6 +81,7 @@ export default {
   &__label
     margin-left: 10px
     cursor: pointer
+    max-width: 51px
   input[type=checkbox]
     margin: 0
     position: absolute

@@ -1,5 +1,5 @@
 <template>
- <div class="v-text_svg">
+ <div class="v-text__svg">
   <svgicon
     :name="svg.name"
     :width="svg.width"
@@ -36,7 +36,7 @@ export default {
 
 <style lang="sass">
 .v-text
-    &_svg
+    &__svg
         display: flex
         align-items: baseline
         svg

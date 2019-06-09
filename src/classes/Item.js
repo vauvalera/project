@@ -11,12 +11,4 @@ export default class Item {
   setName(name) {
     this.name = name;
   }
-
-  getName() {
-    return this.name;
-  }
-
-  getCode() {
-    return this.code;
-  }
 }

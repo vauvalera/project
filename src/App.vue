@@ -15,8 +15,8 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-import VCard from './components/VCard';
-import VFilter from './components/VFilter';
+import VCard from './components/VCard.vue';
+import VFilter from './components/VFilter.vue';
 import './assets/fonts/fonts.sass';
 
 export default {
@@ -31,7 +31,7 @@ export default {
     }),
   },
   created() {
-  	this.getItems();
+    this.getItems();
   },
   methods: {
     ...mapActions([

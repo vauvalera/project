@@ -4,13 +4,13 @@
     :name="svg.name"
     :width="svg.width"
     :height="svg.height"
-  ></svgicon>
+  />
   <v-text :text="text"></v-text>
  </div>
 </template>
 
 <script>
-import VText from './VText';
+import VText from './VText.vue';
 
 export default {
   name: 'VTextSvg',

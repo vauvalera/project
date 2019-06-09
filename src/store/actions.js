@@ -32,7 +32,7 @@ export default {
   },
 
   setFavorite(store, card) {
-    const id = card.getId();
+    const id = card.id;
     if (id < 0) {
       return;
     }

@@ -24,7 +24,7 @@ export default {
 
   setFavorite(state, data) {
     state.cards.forEach(card => {
-      if (card.getId() === data.id) {
+      if (card.id === data.id) {
         card.setInFavorite(data.favorite);
       }
     });

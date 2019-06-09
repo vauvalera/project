@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import VText from './VText';
+import VText from './VText.vue';
 
 export default {
   name: 'VBlockText',

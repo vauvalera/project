@@ -52,8 +52,8 @@ const setFavorite = card => {
     status: 200,
     message: 'ok',
     data: {
-      id: card.getId(),
-      favorite: !card.getInFavorite(),
+      id: card.id,
+      favorite: !card.inFavorite,
     },
   };
 

@@ -4,13 +4,13 @@
      :name="svg.name"
      :width="svg.width"
      :height="svg.height"
-    ></svgicon>
+    />
     {{ title }}
   </v-button>
 </template>
 
 <script>
-import VButton from './VButton';
+import VButton from './VButton.vue';
 import '../../assets/fonts/animations.sass';
 
 export default {

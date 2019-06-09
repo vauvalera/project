@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import VButton from './VButton';
+import VButton from './VButton.vue';
 import '../../assets/fonts/animations.sass';
 
 export default {

@@ -9,34 +9,6 @@ export default class Card {
     this.inFavorite = inFavorite;
   }
 
-  getId() {
-    return this.id;
-  }
-
-  getArt() {
-    return this.art;
-  }
-
-  getName() {
-    return this.name;
-  }
-
-  getImage() {
-    return this.img;
-  }
-
-  getTech() {
-    return this.tech;
-  }
-
-  getInStock() {
-    return this.inStock;
-  }
-
-  getInFavorite() {
-    return this.inFavorite;
-  }
-
   setInFavorite(value) {
     this.inFavorite = value;
   }

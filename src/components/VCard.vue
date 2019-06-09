@@ -3,37 +3,37 @@
         <v-text
           class="v-text--pinkish-grey"
           :text="art"
-        ></v-text>
+        />
         <a
           class="v-card__img"
           href="#"
         >
-          <img :src="card.getImage()" />
+          <img :src="card.img" />
         </a>
         <div class="v-card__content">
           <v-text-svg
             class="v-text--green"
             :text="stock"
-          ></v-text-svg>
-          <v-title :title="card.getName()"></v-title>
+          />
+          <v-title :title="card.name"/>
           <v-block-text
-            :items="card.getTech()"
-          ></v-block-text>
+            :items="card.tech"
+          />
         </div>
         <div class="v-card__actions">
           <v-button-svg
             class="v-button--blue"
             :title="btnBuy"
-          ></v-button-svg>
+          />
           <div class="v-card__actions">
             <v-button-svg
               class="v-button__svg"
               :svg="svg"
               @click="setFavorite(card)"
-            ></v-button-svg>
+            />
             <v-button-image
               :src="btnCompare"
-            ></v-button-image>
+            />
           </div>
         </div>
     </div>
@@ -41,13 +41,13 @@
 
 <script>
 import { mapActions } from 'vuex';
-import VTitle from './elements/VTitle';
-import VButtonSvg from './elements/VButtonSvg';
-import VTextSvg from './elements/VTextSvg';
-import VBlockText from './elements/VBlockText';
-import VText from './elements/VText';
+import VTitle from './elements/VTitle.vue';
+import VButtonSvg from './elements/VButtonSvg.vue';
+import VTextSvg from './elements/VTextSvg.vue';
+import VBlockText from './elements/VBlockText.vue';
+import VText from './elements/VText.vue';
 import Card from '../classes/Card';
-import VButtonImage from './elements/VButtonImage';
+import VButtonImage from './elements/VButtonImage.vue';
 
 export default {
   name: 'VCard',
@@ -75,11 +75,10 @@ export default {
   },
   computed: {
     art() {
-      const art = this.card.getArt();
-      return `Арт. ${art}`;
+      return `Арт. ${this.card.art}`;
     },
     stock() {
-      const stock = this.card.getInStock();
+      const stock = this.card.inStock;
       return stock ? 'В наличии' : 'Отсутсвует';
     },
   },
@@ -96,6 +95,7 @@ export default {
   margin-right: 10px
   margin-top: 10px
   padding: 20px 32px 30px
+  transition: all 0.5s
   &__img
     display: flex
     justify-content: center

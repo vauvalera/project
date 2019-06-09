@@ -53,4 +53,4 @@ module.exports = {
     }],
     'arrow-parens': ["error", "as-needed"],
   }
-}
+};

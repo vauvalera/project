@@ -2,7 +2,7 @@
   <p
     class="v-text"
     v-text="text"
-  ></p>
+  />
 </template>
 
 <script>

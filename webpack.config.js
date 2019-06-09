@@ -4,10 +4,10 @@ global.production = process.env.NODE_ENV !== 'development';
 
 const distPath = path.join(__dirname, production ? '/public' : '/dist/');
 const publicPath = production ? path.join(__dirname, 'public/') : '/';
-const modules = require('./src/webpack/modules');
-const plugins = require('./src/webpack/plugins');
-const server = require('./src/webpack/server');
-const optimization = require('./src/webpack/optimization');
+const modules = require('./webpack/modules');
+const plugins = require('./webpack/plugins');
+const server = require('./webpack/server');
+const optimization = require('./webpack/optimization');
 
 module.exports = {
   mode: 'development',
